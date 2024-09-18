@@ -5,7 +5,7 @@ import { Container, ContainerInputs, Form, Input, InputLabel, Title, TopBackgrou
 from './styles'
 
 import UsersImage from  './assets/users.png'
-import Button from './components/Button'
+import {DefaultButton as Button} from './components/Button'
 
 
 function Home(){
