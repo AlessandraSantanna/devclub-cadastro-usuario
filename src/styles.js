@@ -74,7 +74,7 @@ span{
     font-weight: bold;
 }
 `  
-
+/*
 export const Button = styled.button`
     border:none;
     background:linear-gradient( 180deg, #fe7e5d 0%, #ff6378 100%);
@@ -92,5 +92,4 @@ export const Button = styled.button`
             opacity:0.5;
         }
 
-`  
-
+`  */
