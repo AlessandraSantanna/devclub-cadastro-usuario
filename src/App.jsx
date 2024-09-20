@@ -1,19 +1,19 @@
 
-import {useRef} from 'react'
+import { useRef } from 'react'
 import api from '../src/services/api'
 import {
   //Button,
   Container,
   ContainerInputs,
   Form,
-  Input, 
-  InputLabel, 
-  Title, 
-  TopBackground } 
-from './styles'
+  Input,
+  InputLabel,
+  Title
+} from './styles'
 
-import UsersImage from  './assets/users.png'
-import {DefaultButton as Button} from './components/Button'
+
+import Button from './components/Button'
+import TopBackground from './components/TopBackground'
 
 
 function Home(){
@@ -37,9 +37,8 @@ function Home(){
   return(
 
       <Container>
-        <TopBackground>
-          <img src = {UsersImage} alt="imagem-usuarios" />
-          </TopBackground>
+        <TopBackground  />
+          
 
 
     <Form>
@@ -71,7 +70,7 @@ function Home(){
           </div>
       
         
-          <Button> type='button' onClick= {registerNewUser}
+          <Button type='button' onClick= {registerNewUser}>
           Cadastrar Usuário</Button>
         
 
