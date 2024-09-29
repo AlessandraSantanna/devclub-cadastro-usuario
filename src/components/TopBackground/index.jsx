@@ -1,4 +1,6 @@
-import UsersImage from './assets/users.png'
+import UsersImage from '../../assets/users.png'
+
+
 import {Background} from './styles'
 
 function TopBackground (){

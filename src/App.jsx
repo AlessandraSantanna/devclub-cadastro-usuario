@@ -1,5 +1,6 @@
 
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import api from '../src/services/api'
 import {
   //Button,
@@ -21,16 +22,18 @@ function Home(){
   const inputAge = useRef()
   const inputEmail = useRef()
 
+const navigate= useNavigate()
+
 
   async function registerNewUser (){
-    const data = await api.post('/usuario',{
-      email:inputEmail.current.value,
-      age:parseInt(inputAge.current.value),
-      name:inputName.current.value
+     await api.post('/usuario',{
+      email: inputEmail.current.value,
+      age: parseInt(inputAge.current.value),
+      name: inputName.current.value,
     })
 
     
-    console.log(data)
+    navigate('/lista-de-usuarios')
   }  
 
  
@@ -70,51 +73,18 @@ function Home(){
           </div>
       
         
-          <Button type='button' onClick= {registerNewUser}>
+          <Button type='button' onClick= {registerNewUser} theme="primary">
           Cadastrar Usuário</Button>
         
 
     </Form>
+
+
+    <Button type='button' onClick={()=>navigate('/lista-de-usuarios')}> Ver lista de Usuário</Button>
+        
     </Container>
   )
   
 }
 export default Home
 
-
-/*import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
-*/
